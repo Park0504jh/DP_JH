@@ -10,7 +10,7 @@ public class Main {
 
         // 책장 테스트
         BookShelf bookShelf = new BookShelf(5);
-        bookShelf.appendBook(new Book(name: "Java Programming"));
+        bookShelf.appendBook(new Book(name: "Java Programming"));  // 첵 데이터 추가
         bookShelf.appendBook(new Book(name: "Design Patterns"));
         bookShelf.appendBook(new Book(name: "Effective Java"));
 
