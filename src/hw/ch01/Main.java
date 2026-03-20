@@ -22,6 +22,7 @@ public class Main {
 
 
         // 장르 필터 Iterator 실행 코드
+        /* 
         System.out.println("=== 소설 장르 ===");
         Iterator<Book> genreIt = bookShelf.iteratorByGenre("소설");
         while (genreIt.hasNext()) {
@@ -29,15 +30,16 @@ public class Main {
             System.out.printf("제목: %s / 장르: %s / 출판연도: %d / 가격: %.0f원%n",
                     b.getName(), b.getGenre(), b.getYear(), b.getPrice());
         }
-
+*/
         // 출판연도 역순 Iterator 실행 코드
+        
         System.out.println("\n=== 출판연도 역순 ===");
         Iterator<Book> yearIt = bookShelf.iteratorByYear("소설");
         while (yearIt.hasNext()) {
             Book b = yearIt.next();
             System.out.printf("제목: %s / 장르: %s / 출판연도: %d / 가격: %.0f원%n",
                     b.getName(), b.getGenre(), b.getYear(), b.getPrice());
-        }
+        } 
 
 /* 
         Iterator<Book> it = bookShelf.iterator();
