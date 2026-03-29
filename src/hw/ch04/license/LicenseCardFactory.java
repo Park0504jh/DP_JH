@@ -14,15 +14,11 @@ public class LicenseCardFactory extends Factory {
     
     @Override
     protected Product createProduct(String holder) {   // LicenseCard 생성 
-        // 1. "2026-03-20"에서 앞 4자리 "2026"만 추출
         String yearStr = baseDate.substring(0, 4); 
     
-        // 2. 문자열을 숫자로 변환하여 5를 더함
         int year = Integer.parseInt(yearStr);
         int expiryYear = year + 5;
     
-        // 3. 다시 나머지 날짜("-03-20")와 합침
-        // "2031" + "-03-20" => "2031-03-20"
         String expiryDate = expiryYear + baseDate.substring(4);
     
         return new LicenseCard(holder, licenseCounter++, baseDate, expiryDate);

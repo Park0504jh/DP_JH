@@ -20,11 +20,11 @@ public class main {
         System.out.println();
 
         // [3-2] Step 2 테스트: 새로운 카드 타입
-        System.out.println("=== LicenseCard 테스트 ===");
-        Factory factory2 = new LicenseCardFactory("2026-03-20");
-        Product license1 = factory2.create("Park Jisung");
-        Product license2 = factory2.create("Lee Min-jae");
-        license1.use();
-        license2.use();
+        //System.out.println("=== LicenseCard 테스트 ===");
+        //Factory factory2 = new LicenseCardFactory("2026-03-20");
+        //Product license1 = factory2.create("Park Jisung");
+        //Product license2 = factory2.create("Lee Min-jae");
+        //license1.use();
+        //license2.use();
     }
 }

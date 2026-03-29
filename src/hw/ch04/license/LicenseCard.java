@@ -25,7 +25,6 @@ public class LicenseCard extends Product {
 
     @Override
     public String toString() {
-        // Step 2 요구사항 형식 준수
         return "[LicenseCard:" + holder + "(" + licenseNumber + ")] - 유효기간: " + issuedDate + "~" + expiryDate;
     }
 }
