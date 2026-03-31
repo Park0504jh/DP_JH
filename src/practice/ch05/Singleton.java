@@ -1,0 +1,22 @@
+package practice.ch05;
+
+// 싱글톤 패턴 적용하기
+public class Singleton {
+    // (3) Singleton 객체를 미리 하나 만들어 둠
+    private static Singleton singleton = new Singleton();
+    // 반드시 static으로 선언하여 클래스가 메모리에 올라갈 때 singleton 객체도 함께 만들어지도록 함
+    // 클래스가 로딩될 때 singleton 객체가 만들어짐
+
+    // (1) 생성자를 private으로 선언하여 외부에서 객체 생성을 못하도록 막는다.
+    private Singleton() {
+        System.out.println("Singleton 객체가 생성됩니다.");
+    }
+
+    // (2) Singleton 객체를 얻어갈 수 있는 메소드를 정의함
+    public static Singleton getInstance() {  // static 메소드로 선언하여 클래스 이름으로 호출할 수 있도록 함
+        return singleton;
+    }
+}
+
+
+// 이 세가지 방식으로 싱글톤 패턴을 구현할 수 있다. 
