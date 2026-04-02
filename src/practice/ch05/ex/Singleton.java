@@ -11,7 +11,9 @@ public class Singleton {
     }
 
     // getInstance가 호출될 때, 싱글톤이 null이면 인스턴스 하나 생성해서 return
-    public static Singleton getInstance() {
+    public static Singleton getInstance() 
+    // public static Singleton Synchronized getInstance() 로 바꾸면 싱글턴 패턴 지킬 수 있음
+    {
         if (singleton == null) {  // 처음 호출되는지 검사
             singleton = new Singleton();
         }
