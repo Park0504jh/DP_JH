@@ -1,5 +1,6 @@
 package ch06.A1a.framework;
 
+// abstract(추상으로 바뀜)
 public abstract class Product implements Cloneable {
     public abstract void use(String s);
 
