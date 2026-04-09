@@ -30,6 +30,6 @@ public class MessageBox implements Product {
 
     @Override
     public Product createCopy() {
-        return new MessageBox(this);
+        return new MessageBox(this);  // 자기 자신을 가지고 복사 생성자 호출
     }
 }
