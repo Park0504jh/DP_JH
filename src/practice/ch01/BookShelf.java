@@ -1,8 +1,8 @@
 package practice.ch01;
 
 import java.util.Iterator;
-
 // iterable은 항상 자동으로 import 되어있어 따로 할 필요 없음
+
 public class BookShelf implements Iterable<Book> { 
 // public class BookShelf {  
     // 책꽃이가 책을 가지고 있다. 책꽃이 속성으로 책 있음 

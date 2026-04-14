@@ -19,18 +19,18 @@ public class Main {
             
 
         // 플레이어 2명 만들기
-        Player player1 = new Player("jh", new WinningStrategy(314));
+        Player player1 = new Player("jh", new ProbStrategy(314));
         Player player2 = new Player("bb", new WinningStrategy(14));
 
         // 게임 시키기
-        for(int i=0; i<10; i++) {
+        for(int i=0; i<1000; i++) {
             // 플레이어 2명에게서 각각 손을 얻음
             Hand h1 = player1.nextHand();
             Hand h2 = player2.nextHand();
 
             // 손을 대결시킴
             if (h1.isStrongerThan(h2)) {
-                System.out.println("Winner:" + player1);
+                System.out.println("Winner:" + player1.toString()); // toString()은 생략 가능, 객체를 문자열로 표현할 때 자동으로 호출됨
                 player1.win();
                 player2.lose();
             } else if (h2.isStrongerThan(h1)) {
@@ -43,5 +43,9 @@ public class Main {
                 player2.even();
             }
         }
+
+        System.out.println("Total result:");
+        System.out.println(player1);
+        System.out.println(player2);
     }
 }
