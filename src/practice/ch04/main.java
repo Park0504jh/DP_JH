@@ -19,3 +19,15 @@ public class main {
 
     }
 }
+
+
+
+// Product c2 = factory.create("JH");
+// 만약 아래처럼 작성한다면 에러 발생
+// IDCard c3 = factory.create("JH");
+// factory에서 return된 건 product 타입이라 IDCard로 받으면 에러
+// (부모 타입은 자식 객체 참조 가능하지만, 자식 타입은 부모 객체 참조 불가능)
+// public final Product create(String owner) { ... } return p; 
+// p는 Product 타입이기 때문에 IDCard로 받으면 에러 발생
+
+// IDCard c3 = (IDCard) factory.create("JH");  // 형변환을 통해 IDCard로 받을 수는 있음 (괄호 내용 필수)
