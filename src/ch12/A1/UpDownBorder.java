@@ -25,7 +25,8 @@ public class UpDownBorder extends Border {
     public String getRowText(int row) {
         if (row == 0 || row == getRows() - 1) {
             // 맨 위와 맨 아래는 장식 문자만의 행
-            return makeLine(borderChar, getColumns());
+            return makeLine(borderChar, getColumns());  
+            // 요청한 숫자가 2이면, 문자 ch로 2개의 문자열을 만든다
         } else {
             // 내용물의 행(맨 위 행수만큼 행 번호를 줄인다
             return display.getRowText(row - 1);
