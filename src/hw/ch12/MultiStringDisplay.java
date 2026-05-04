@@ -3,20 +3,21 @@ package hw.ch12;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * PDF 제공 코드 분석 항목: 여러 문자열을 표시하는 컴포넌트
- */
 public class MultiStringDisplay extends Display {
-    private List<String> body = new ArrayList<>(); // 문자열을 저장할 리스트
-    private int columns = 0; // 최대 폭 저장 변수
+    // 표시 문자열 저장 장소
+    private List<String> body = new ArrayList<>();
+    // 표시 문자열 최대 문자 수 
+    private int columns = 0;  // columns: 현재 제일 긴 문자열의 길이
 
-    // 문자열을 추가하고 최대 폭(columns)을 갱신함
-    public void add(String string) {
-        body.add(string);
-        if (string.length() > columns) {
-            columns = string.length();
+    // 문자열 추가 
+    public void add(String msg) {
+        body.add(msg);
+        if (columns < msg.length()) {  // 더 긴 문자열이 추가되면...
+            // 최대 문자 수 갱신
+            columns = msg.length();
         }
-        updatePadding(); // 기존 문자열들의 공백 패딩을 맞춤
+        updatePadding();  
+        // 제일 긴 문자에 맞춰서 나머지 문자열의 오른쪽 끝에 공백을 채운다
     }
 
     @Override
@@ -34,14 +35,25 @@ public class MultiStringDisplay extends Display {
         return body.get(row);
     }
 
-    // 모든 행의 길이를 최대 폭(columns)에 맞춰 공백으로 채움[cite: 1]
+    // 표시 문자열 오른쪽 끝에 채울 공백을 필요에 따라 늘린다
     private void updatePadding() {
-        for (int i = 0; i < body.size(); i++) {
-            String s = body.get(i);
-            int paddingCount = columns - s.length();
-            if (paddingCount > 0) {
-                body.set(i, s + " ".repeat(paddingCount));
+        // 현재 추가된 모든 문자열에 대해서... for 루프 돌림
+        for (int row = 0; row < body.size(); row++) {  
+            String line = body.get(row);
+            int padding = columns - line.length();
+            if (padding > 0) {  // 현재 문자열이 제일 긴 문자열보다 짧으면...
+                body.set(row, line + spaces(padding));  
+                // 오른쪽 끝에 공백을 채운 문자열로 갱신한다
             }
         }
+    }
+
+    // count 수만큼의 공백을 만든다 
+    private String spaces(int count) {
+        StringBuilder spaces = new StringBuilder();
+        for (int i = 0; i < count; i++) {
+            spaces.append(' ');
+        }
+        return spaces.toString();
     }
 }
