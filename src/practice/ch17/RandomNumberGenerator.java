@@ -2,6 +2,8 @@ package practice.ch17;
 
 import java.util.Random;
 
+// 구체적으로 자신을 누가 관찰하고 있는지 모름
+// 그저 Observer 중 하나가 자신을 관찰하고 있다는 사실만 알고 있음
 public class RandomNumberGenerator extends NumberGenerator {
     private Random random = new Random(); 	// 난수 생성기 
     private int number;                   		// 현재 수 
