@@ -19,13 +19,16 @@ public class BigCharFactory {
     }
 
     // BigChar 인스턴스 생성(공유)
-    public synchronized BigChar getBigChar(char charname) {
-        BigChar bc = pool.get(String.valueOf(charname));
-        if (bc == null) {
+    public synchronized BigChar getBigChar(char charname) {  // '3'
+
+        // 이미 만들어진 BigChar 인스턴스를 검색
+        BigChar bc = pool.get(String.valueOf(charname));  // '3'
+
+        if (bc == null) {  // 이미 만들어진 인스턴스가 없다면
             // 여기서 BigChar 인스턴스를 생성 
             bc = new BigChar(charname);
             pool.put(String.valueOf(charname), bc);
         }
-        return bc;
+        return bc;  // 이미 만들어진 인스턴스가 있다면 그것을 반환, 없으면 생성해서 반환
     }
 }
