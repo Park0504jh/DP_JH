@@ -16,6 +16,8 @@ public abstract class Support {
     }
 
     // 트러블 해결 절차를 결정한다
+    // 템플릿 메소드 패턴
+    // : 알고리즘의 구조는 그대로 두고, 세부적인 처리는 서브 클래스에서 구현하도록 하는 디자인 패턴
     public void support(Trouble trouble) {
         if (resolve(trouble)) {  // 내가 해결을 시도
             done(trouble);  // 성공하면 done() 메소드로 해결했다고 출력
