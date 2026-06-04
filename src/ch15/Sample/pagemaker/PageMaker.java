@@ -4,10 +4,12 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Properties;
 
+// 퍼사드 역할을 하는 클래스
 public class PageMaker {
     private PageMaker() {
     }
 
+    // 하이레벨 API
     public static void makeWelcomePage(String mailaddr, String filename) {
         try {
             Properties mailprop = Database.getProperties("maildata");

@@ -33,6 +33,7 @@ public class PageMaker {
                 String username = mailprop.getProperty(mailaddr, "(unknown)");
                 writer.mailto(mailaddr, username);
             }
+            
             writer.close();
             System.out.println(filename + " is created.");
         } catch (IOException e) {
